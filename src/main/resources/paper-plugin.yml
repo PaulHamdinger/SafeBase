@@ -1,0 +1,25 @@
+#===============================================================================
+# paper-plugin.yml - SafeBase
+#===============================================================================
+#
+# Modern Paper manifest. Distinct from the legacy plugin.yml ; Paper picks
+# this up first when both are present, but we ship only this one.
+#
+#===============================================================================
+
+name        : SafeBase
+version     : 5.0.0
+main        : com.nethercore.safebase.SafeBasePlugin
+api-version : '1.21'
+description : Player base protection.
+author      : Hamdinger
+website     : https://github.com/hamdinger
+load        : POSTWORLD
+
+
+
+#==============================================================================
+# Commands are registered programmatically via LifecycleEvents.COMMANDS in
+# SafeBasePlugin#onEnable - Paper plugins forbid the legacy commands: block
+# alongside JavaPlugin#getCommand.
+#==============================================================================

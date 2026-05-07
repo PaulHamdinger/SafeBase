@@ -1,0 +1,73 @@
+#===============================================================================
+# config.yml - SafeBase
+#===============================================================================
+#
+# Admin-tunable knobs for SafeBase. All values are validated on load ; bogus
+# values are logged as WARN and replaced with the defaults listed below.
+# Reload with /safebase refresh.
+#
+#===============================================================================
+
+
+schema-version : 5
+
+
+#= Zone geometry ==============================================================
+#
+# Half-widths are in blocks, measured from the lectern on the X and Z axes.
+# Zones are square columns running the full height of the world.
+# Warning radius is computed as default-safe-zone-half-width + warning-moat-width.
+#
+#==============================================================================
+
+default-safe-zone-half-width  : 128
+warning-moat-width    : 32
+
+
+#= Warning behaviour ==========================================================
+
+# How long (in seconds) to suppress repeated warning messages per
+# (player, zone) pair. 0 disables the cooldown.
+warning-cooldown-seconds : 30
+
+
+#= Background task ============================================================
+
+# Interval (in ticks ; 20 ticks = 1 second) for the repeating background
+# task. Handles warning-zone scans and the safety-net pass.
+slow-task-interval-ticks : 40
+
+
+#= Lectern particle effects ====================================================
+#
+# Visual indicator shown on active SafeBase zones (every 80 ticks / 4 seconds).
+# Set to one of the following:
+#
+#   beacon         - GLOW particle column + END_ROD sparkle on each platform
+#                    block (default). Subtle, no colour variation.
+#
+#   colored-beacon - DUST particle column tinted by zone mode : white for
+#                    whitelist zones, dark purple for blacklist zones.
+#
+#   color-ring     - Ring of DUST particles at platform height, tinted by
+#                    zone mode. Slowly rotates across refreshes.
+#
+#   shield-dome    - Hemisphere of DUST particles over the platform, tinted
+#                    by zone mode.
+#
+# Invalid values fall back to beacon.
+#
+#==============================================================================
+
+particle-effect : color-ring
+
+
+#= Allowed players =============================================================
+#
+# Players permitted to create safe zones. Accepts player names or UUIDs.
+# This list is synced with LuckPerms : entries here are granted safebase.create
+# on startup, and in-game /safebase allow/deny updates this list.
+#
+#==============================================================================
+
+allowed-players : []
