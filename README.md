@@ -1,10 +1,12 @@
 # SafeBase : Create safe zones with vanilla blocks!
 
-**SafeBase** lets you create a safe zone around your base. Allow in only your friends and teammates. Griefers get stopped at the invisible barrier!
+**SafeBase** lets you create a safe zone around your base. Permit only your friends and teammates. Griefers get stopped at an invisible barrier!
 
 ## How it works
 
 Place a **lectern** on top of a **block of white wool**, then add a **book-and-quill** to the lectern. That's all it takes to create a zone of protection around the lectern. You'll see particles start to swirl nearby.
+
+![SafeBase particle ring effect](screenshots/screenshot-01.jpg)
 
 By default _only you can enter_ your SafeBase. The safe zone takes the shape of a square **128 blocks across**, centered around the lectern, and extends the entire height of the world.
 
@@ -32,7 +34,7 @@ You can add up to _8 more blocks_ of wool next to the original block, to expand 
 
 Ops bypass all SafeBase enforcement.
 
-By default, Ops must allow players to use the SafeBase system with `/safebase allow`. Or the server owner can manually edit config.yml after first launch.
+Only permitted players can use SafeBase. Ops _opt-in_ players to SafeBase with the `/safebase allow` command. Or the server owner can manually edit config.yml after first launch.
 
 Ops also have commands for listing and disabling SafeBases. See `/safebase help` for the full list of options.
 
